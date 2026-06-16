@@ -1,0 +1,26 @@
+{% load static %} 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'image/logo.png' %}" alt="Logo" width="100" height="50" class="logo-image" >
+        وحدة القئ الدموي
+    </a>
+    
+    <div class="navbar-nav">
+      <a class="nav-link" href="{% url 'home' %}">الرئيسية</a>
+      
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          القسم
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'pictures' %}">معرض الصور</a></li>
+          <li><a class="dropdown-item" href="{% url 'pressure-page' %}">إقرار القرح</a></li>
+          <li><a class="dropdown-item" href="{% url 'x-page' %}">معايير GAHAR</a></li>
+          <li><a class="dropdown-item" href="{% url 'rights-page' %}">معايير السلامه</a></li>
+          <li><a class="dropdown-item" href="{% url 'pt-rights' %}">حقوق وواجبات</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

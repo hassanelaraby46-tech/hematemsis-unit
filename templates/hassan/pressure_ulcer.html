@@ -1,0 +1,180 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>بوستر قرح الضغط</title>
+    <style>
+        /* ضبط المقاس ليكون A3 (مقاس بوستر شائع) */
+        @page { size: A3; margin: 0; }
+        body { 
+            font-family: 'Cairo', 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 2cm; 
+            background-color: #f4f7f6; /* خلفية هادئة */
+            color: #333;
+        }
+        .poster-container { 
+            background: white; 
+            max-width: 26cm; /* يناسب عرض A3 */
+            margin: auto; 
+            padding: 2cm; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+            border-top: 15px solid #2c5038; /* لون المستشفى */
+        }
+        h1.main-title { 
+            text-align: center; 
+            color: #2c5038; 
+            font-size: 3em; 
+            margin-bottom: 50px; 
+            border-bottom: 4px solid #8fc0a9;
+            padding-bottom: 20px;
+        }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 2em;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .field-group { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+        }
+        .field { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 10px; 
+            border-right: 8px solid #8fc0a9; 
+        }
+        .field-label { 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            color: #555; 
+            display: block;
+            margin-bottom: 10px;
+        }
+        .field-input {
+            border-bottom: 2px solid #ccc;
+            width: 100%;
+            height: 30px;
+            display: inline-block;
+        }
+        .acknowledgment {
+            font-size: 1.6em;
+            line-height: 1.8;
+            background: #eef7f2;
+            padding: 30px;
+            border-radius: 15px;
+            color: #333;
+        }
+        .signature-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            font-size: 1.4em;
+        }
+        .signature-box {
+            background: #fdfdfd;
+            border: 2px solid #eee;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .signature-title {
+            font-weight: bold;
+            color: #2c5038;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .sig-field {
+            margin-bottom: 15px;
+        }
+        
+        /* تنسيق خاص للطباعة */
+        @media print {
+            body { background: white; padding: 0; }
+            .poster-container { 
+                box-shadow: none; 
+                border: none; 
+                padding: 1cm;
+            }
+            .main-title { font-size: 3.5em; }
+        }
+          @media print {
+    body {
+        padding: 0;
+        background-color: white;
+    }
+    .poster {
+        box-shadow: none;
+       
+    }
+    /* إخفاء أي عناصر غير ضرورية عند الطباعة */
+    @page {
+        margin: 0; /* تقليل الهوامش ليتناسب التصميم مع الورقة */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <h1 class="main-title">🏥 إقرار إثبات وجود قرح ضغط عند الدخول</h1>
+        
+        <div class="section">
+            <div class="section-title">👤 بيانات المريض</div>
+            <div class="field-group">
+                <div class="field">
+                    <span class="field-label">اسم المريض:</span>
+                    <span class="field-input"></span>
+                </div>
+                <div class="field">
+                    <span class="field-label">رقم الملف الطبي:</span>
+                    <span class="field-input"></span>
+                </div>
+                <div class="field">
+                    <span class="field-label">تاريخ ووقت الدخول:</span>
+                    <span class="field-input"></span>
+                </div>
+                <div class="field">
+                    <span class="field-label">الساعة:</span>
+                    <span class="field-input"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📄 نص الإقرار</div>
+            <div class="acknowledgment">
+                <p>أقر أنا الموقع أدناه، بأن المريض المذكور أعلاه قد حضر للمستشفى وهو يعاني من وجود قرحة ضغط ناتجة عن تواجده بالمنزل/جهة أخرى قبل الدخول، وذلك في المناطق التالية من الجسم:</p>
+                <div class="field-input" style="width: 100%; border-color: #8fc0a9;"></div>
+                <p style="font-size: 0.8em; color: #777;">(مثلاً: أسفل الظهر، كعب القدم)</p>
+                <p>وقد تم إبلاغ الفريق الطبي والتمريضي بها فور الوصول وتمت معاينتها وتوثيق درجتها من قبل تمريض القسم عند إجراء الفحص المبدئى، وهذا إقراراً مني بذلك لإثبات حالة المريض عند الدخول وإخلاء مسؤولية المستشفى عن نشوء هذه القرحة.</p>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-box">
+                <span class="signature-title">المقر بما فيه:</span>
+                <div class="sig-field">الاسم: .......................................</div>
+                <div class="sig-field">صلة القرابة: ..............................</div>
+                <div class="sig-field">التوقيع: .................................</div>
+                <div class="sig-field">الرقم القومى : ...............................</div>
+
+            </div>
+            <div class="signature-box">
+                <span class="signature-title">شاهد من التمريض:</span>
+                <div class="sig-field">الاسم: .......................................</div>
+                <div class="sig-field">التوقيع: .................................</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

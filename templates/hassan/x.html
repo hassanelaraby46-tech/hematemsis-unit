@@ -1,0 +1,97 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* تنسيقات العرض على الشاشة */
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: #f4f7f6; 
+            padding: 20px; 
+            margin: 0;
+        }
+        .poster { 
+            background: white; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border-top: 15px solid #48502c; 
+        }
+        h1 { color: #2c3e50; text-align: center; font-size: 3em; margin-bottom: 20px;}
+        .grid-container { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
+        .item { 
+            background: #f8f9fa; 
+            padding: 15px; 
+            border-radius: 10px; 
+            border-right: 8px solid #3498db; 
+            font-size: 18px;font-weight: bold;
+        }
+        .number { color: #3498db; font-weight: bold; display: block; margin-bottom: 5px; }
+
+       @media print {
+    @page {
+        size: A4;
+        margin: 10mm; /* تقليل الهوامش الخارجية للورقة */
+    }
+    
+    body { 
+        background-color: white; 
+        padding: 0; 
+        margin: 0;
+    }
+
+    .poster { 
+        box-shadow: none; 
+        border-top: 10px solid #2c3e50; 
+        width: 100%; /* ملء العرض المتاح */
+        max-width: 100%; 
+        padding: 20px;
+        margin: 0 auto; /* التوسيط */
+        box-sizing: border-box;
+    }
+
+    h1 { font-size: 30px; margin-bottom: 20px; font-weight: bold;}
+
+    .grid-container { 
+        display: grid; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 15px; 
+    }
+
+    .item { 
+        border: 1px solid #eee; 
+        border-right: 8px solid #3498db; 
+        padding: 10px;
+        font-size: 21px; /* حجم مناسب للقراءة */
+        page-break-inside: avoid; 
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <h1>حقوق وواجبات المرضى طبقاً لمعايير GAHAR</h1>
+        <div class="grid-container">
+            <div class="item"><span class="number">01</span> سياسات حقوق المرضى</div>
+            <div class="item"><span class="number">02</span> سياسات تعريف المرضى بحقوقهم</div>
+            <div class="item"><span class="number">03</span> سياسات واجبات ومسؤوليات المرضى</div>
+            <div class="item"><span class="number">04</span> سياسات تعريف المرضى بمسؤولياتهم تجاه المستشفى</div>
+            <div class="item"><span class="number">05</span> أخذ الإقرار الطبي العام</div>
+            <div class="item"><span class="number">06</span> الحصول على الموافقة المستنيرة وتعريف المريض بالبدائل والفوائد والمخاطر</div>
+            <div class="item"><span class="number">07</span> أخذ الإقرار الطبي من شخص آخر غير المريض</div>
+            <div class="item"><span class="number">08</span> أماكن تواجد الإقرار الطبي</div>
+            <div class="item"><span class="number">09</span> سرية المعلومات الخاصة بالمريض</div>
+            <div class="item"><span class="number">10</span> خصوصية المريض</div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

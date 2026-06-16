@@ -1,0 +1,107 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* إعدادات الطباعة لملء الورقة الكبيرة */
+        @page { size: A1; margin: 10mm; } 
+
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; padding: 20px; }
+        
+        .poster { 
+            background: white; 
+            max-width: 1400px; /* عرض أكبر للبوستر */
+            margin: auto; 
+            padding: 60px; /* مساحات داخلية أكبر */
+            border: 10px solid #2c3e50 !important; 
+            border-radius: 30px; 
+        }
+
+        h1 { 
+            text-align: center; 
+            color: #2c3e50; 
+            border-bottom: 6px solid #2c3e50; 
+            padding-bottom: 30px; 
+            margin-bottom: 50px; 
+            font-size: 55px; /* عنوان ضخم */
+        }
+        
+        .container { display: flex; gap: 60px; }
+        .column { flex: 1; }
+        
+        h2 { 
+            color: #d35400; 
+            border-bottom: 4px solid #d35400; 
+            padding-bottom: 15px; 
+            font-size: 40px; /* عنوان الأعمدة ضخم */
+            margin-bottom: 25px;
+        }
+        
+        ul { list-style-type: none; padding: 0; }
+        li { 
+            margin-bottom: 25px; 
+            font-size: 28px; /* نص الفقرات مكبر جداً للرؤية من مسافة */
+            line-height: 1.6; 
+            padding-right: 40px; 
+            position: relative; 
+        }
+        li::before { content: "✔"; position: absolute; right: 0; color: #27ae60; font-weight: bold; font-size: 30px; }
+        
+        /* إجبار المتصفح على الطباعة بالألوان والإطار */
+        @media print {
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white; }
+            .poster { border: 10px solid #2c3e50 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <h1>وثيقة حقوق وواجبات المرضى - مستشفيات جامعة الإسكندرية</h1>
+
+        <div class="container">
+            <div class="column">
+                <h2>أولاً: حقوق المريض</h2>
+                <ul>
+                    <li>الحق في الحصول على الرعاية الطبية اللائقة والآمنة.</li>
+                    <li>الحق في الحصول على الخدمة الطبية على مدار 24 ساعة يومياً.</li>
+                    <li>الحق في الحصول على الرعاية التي يقوم بها الطبيب المعالج والطبيب المسؤول.</li>
+                    <li>الحق في معرفة التراخيص المتعلقة بالأطباء والعاملين في المستشفى.</li>
+                    <li>الحق في الحصول على أفضل خدمة طبية آمنة.</li>
+                    <li>الحق في أن تطلع على التشخيص الدقيق وخطة العلاج.</li>
+                    <li>الحق في أن يتابع الفريق الطبي معك مدى استجابتك لخطوات العلاج.</li>
+                    <li>الحق في أن يقوم الفريق الطبي بتعليم المريض على مقياس الألم وإعطاء العلاج المناسب.</li>
+                    <li>من حقك رفض العلاج أو عدم الاستمرار فيه بعد توضيح المخاطر.</li>
+                    <li>يحق للمريض توكيل أحد أفراد العائلة ليكون نائباً عنه.</li>
+                    <li>الحصول على موافقتك الكتابية قبل العمليات والتدخلات.</li>
+                    <li>الحق في معرفة أسعار الخدمات وتوفير فاتورة مفصلة.</li>
+                    <li>الحق في تقديم الشكاوى وتلقي رد جدّي بشأنها.</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2>ثانياً: واجبات المريض</h2>
+                <ul>
+                    <li>الالتزام بمواعيد الزيارة المحددة.</li>
+                    <li>الالتزام بهدوء واتباع النظام أثناء زيارة المرضى.</li>
+                    <li>إمكانية وجود مرافق للمريض في حالة كان المريض طفل (أقل من 12 عاماً).</li>
+                    <li>يجب الالتزام بالمواعيد الخاصة بمرافق المستشفى.</li>
+                    <li>يمنع إدخال الأطعمة من خارج المستشفى.</li>
+                    <li>الالتزام بسياسة عدم التدخين وفق القانون.</li>
+                    <li>يجب تقديم كافة المعلومات المتعلقة بالتاريخ المرضي.</li>
+                    <li>إبلاغ الفريق الطبي بأي تغييرات حدثت خلال فترة العلاج.</li>
+                    <li>لا يحق للمريض أو أهله الاحتفاظ بأية أدوية أو عدم اتباع الإرشادات.</li>
+                    <li>الالتزام بالمواعيد المقررة للزيارات التابعة في العيادات الخارجية.</li>
+                    <li>الالتزام بالمواعيد المقررة للعمليات الجراحية والفحوصات.</li>
+                    <li>يجب إحضار الملفات الطبية وتسليمها لمكتب الأمانات.</li>
+                    <li>الالتزام بالمبادرة بدون تأخير بعد انتهاء الإجراءات الطبية.</li>
+                    <li>أي تأخير عن الموعد سوف يكون على حساب مسؤولية المريض.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

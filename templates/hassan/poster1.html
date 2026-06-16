@@ -1,0 +1,50 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f4f7f6; padding: 40px; }
+        .poster { background: white; max-width: 800px; margin: auto; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 15px solid #2c3e50; }
+        h1 { color: #2c3e50; text-align: center; font-size: 3em; margin-bottom: 30px; }
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .item { background: #f8f9fa; padding: 20px; border-radius: 10px; border-right: 8px solid #3498db; transition: 0.3s; font-size: 24px;}
+        .item:hover { background: #eef2f3; transform: scale(1.02); }
+        .number { color: #3498db; font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 5px; }
+        @media print {
+    body {
+        padding: 0;
+        background-color: white;
+    }
+    .poster {
+        box-shadow: none;
+       
+    }
+    /* إخفاء أي عناصر غير ضرورية عند الطباعة */
+    @page {
+        margin: 0; /* تقليل الهوامش ليتناسب التصميم مع الورقة */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <h1>معايير السلامة العالمية</h1>
+        <div class="grid-container">
+            <div class="item"><span class="number">01</span> التعريف الصحيح للمريض</div>
+            <div class="item"><span class="number">02</span> الحوادث العرضية</div>
+            <div class="item"><span class="number">03</span> الأوامر الشفهية والتليفونية</div>
+            <div class="item"><span class="number">04</span> النتائج الحرجة</div>
+            <div class="item"><span class="number">05</span> الوقاية من قرح الفراش</div>
+            <div class="item"><span class="number">06</span> تقييم منع السقوط</div>
+            <div class="item"><span class="number">07</span> التواصل عند التسليم</div>
+            <div class="item"><span class="number">08</span> الإنذارات الحرجة</div>
+            <div class="item"><span class="number">09</span> التوصيلات الخاطئة للقسطرة</div>
+            <div class="item"><span class="number">10</span> التدهور الإكلينيكي</div>
+            <div class="item"><span class="number">11</span> الوقاية من الجلطات الوريدية</div>
+        </div>
+    </div>
+</body>
+</html>
+  {% endblock %}
