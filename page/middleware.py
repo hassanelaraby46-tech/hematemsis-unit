@@ -5,12 +5,19 @@ class VisitorTrackingMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # استخراج عنوان الـ IP والمسار
-        ip = request.META.get('REMOTE_ADDR')
+        # 1. محاولة الحصول على الـ IP الحقيقي عبر X-Forwarded-For
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            # العنوان الحقيقي يكون أول عنوان في القائمة
+            ip = x_forwarded_for.split(',')[0].strip()
+        else:
+            # في حال عدم وجوده، نستخدم REMOTE_ADDR التقليدي
+            ip = request.META.get('REMOTE_ADDR')
+
         path = request.path
         user_agent = request.META.get('HTTP_USER_AGENT', '')
 
-        # استثناء الملفات الثابتة (static) من التسجيل لتقليل حجم البيانات
+        # استثناء الملفات الثابتة ولوحة التحكم من التسجيل لتوفير المساحة
         if not path.startswith('/static/') and not path.startswith('/admin/'):
             VisitorLog.objects.create(
                 ip_address=ip,
