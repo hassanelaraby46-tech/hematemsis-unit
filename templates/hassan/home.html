@@ -1,17 +1,78 @@
 {% extends 'hassan/base.html' %}
 {% load static %}
 
-{% block title %}الرئيسية - القيء الدموي{% endblock %}
+{% block title %}الرئيسية - وحدة القيء الدموي{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-primary">مرحباً بك في وحدة القيء الدموي</h1><br>
+        <h1 class="display-4 fw-bold text-primary">مرحباً بك في وحدة القيء الدموي</h1>
         <p class="lead text-muted">نعمل معاً لضمان سلامة المرضى وتقديم أفضل رعاية طبية</p>
     </div>
-    
-    <div class="mb-5">
-        <img src="{% static 'image/s.png' %}" alt="صورة الوحدة" class="img-fluid w-100 rounded shadow-lg">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="accordion mb-5" id="servicesAccordion">
+                
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            <i class="bi bi-shield-check me-2 text-primary"></i> مكافحة العدوى
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="list-group list-group-flush">
+                                <a href="{% url '5 moments' %}" class="list-group-item list-group-item-action">الخمس لحظات لغسل الأيدي</a>
+                                <a href="{% url 'typesofhandwash' %}" class="list-group-item list-group-item-action">أنواع غسيل الأيدي</a>
+                                <a href="{% url 'PPE' %}" class="list-group-item list-group-item-action">الواقيات الشخصية</a>
+                                <a href="{% url 'isolation' %}" class="list-group-item list-group-item-action">احتياطات العزل</a>
+                                <a href="{% url 'injection' %}" class="list-group-item list-group-item-action">احتياطات الحقن</a>
+                                <a href="{% url 'uti' %}" class="list-group-item list-group-item-action">أساليب العمل ومعالجة الآلات</a>
+                                <a href="{% url 'النفايات' %}" class="list-group-item list-group-item-action">فصل النفايات</a>
+                                <a href="{% url 'vbundle' %}" class="list-group-item list-group-item-action">حزمة الوقاية التنفسية (VAP)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            <i class="bi bi-file-earmark-medical me-2 text-primary"></i> سياسات الجودة
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="list-group list-group-flush">
+                                <a href="{% url 't' %}" class="list-group-item list-group-item-action">test44</a>
+                                <a href="{% url 'rights-page' %}" class="list-group-item list-group-item-action">معايير السلامة</a>
+                                <a href="{% url 'pt-rights' %}" class="list-group-item list-group-item-action">حقوق وواجبات المريض</a>
+                                <a href="{% url 'x-page' %}" class="list-group-item list-group-item-action">معايير GAHAR</a>
+                                <a href="{% url 'pressure-page' %}" class="list-group-item list-group-item-action">إقرار القرح</a>
+                                <a href="{% url 'pictures' %}" class="list-group-item list-group-item-action">معرض الصور</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            <i class="bi bi-book me-2 text-primary"></i> المراجع العلمية (GAHAR)
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="list-group list-group-flush">
+                                <a href="{% url 'pdf' %}" class="list-group-item list-group-item-action">الكتب (عربي)</a>
+                                <a href="{% url 'pdf2' %}" class="list-group-item list-group-item-action">الكتب (انجليزى)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row justify-content-center">
@@ -20,9 +81,10 @@
                 <div class="card-body p-4">
                     <h5 class="card-title fw-bold">مع تحيات فريق عملنا</h5>
                     <p class="card-text text-secondary">Hematemesis Unit</p>
-                    <a href="{% url 'pt-rights' %}" class="btn btn-outline-primary btn-lg mt-2">عرض حقوق وواجبات المريض</a>
                 </div>
-                <li>hassan_elaraby</li>
+                <div class="card-footer text-muted bg-white border-0 py-3">
+                    <small>المطور: hassan_elaraby</small>
+                </div>
             </div>
         </div>
     </div>
