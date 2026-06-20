@@ -17,8 +17,8 @@
         </li>
         
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          مكافحه العدوى
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            مكافحه العدوى
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm">
             <li><h6 class="dropdown-header">دليل مكافحة العدوى</h6></li>
@@ -31,32 +31,34 @@
             <li><a class="dropdown-item" href="{% url 'النفايات' %}">فصل النفايات</a></li>
             <li><a class="dropdown-item" href="{% url 'vbundle' %}">حزمة الوقاية التنفسية (VAP)</a></li>
           </ul>
-          </li>
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="newDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               سياسات الجوده
-               </a>
-              <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                   <li><h6 class="dropdown-header">السياسات</h6></li>
-                   <li><a class="dropdown-item" href="{% url 't' %}">test44</a></li>
-                   <li><a class="dropdown-item" href="{% url 'rights-page' %}">معايير السلامة</a></li>
-                   <li><a class="dropdown-item" href="{% url 'pt-rights' %}">حقوق وواجبات المريض</a></li>
-                   <li><a class="dropdown-item" href="{% url 'x-page' %}">معايير GAHAR</a></li>
-                   <li><a class="dropdown-item" href="{% url 'pressure-page' %}">إقرار القرح</a></li>
-                   <li><a class="dropdown-item" href="{% url 'pictures' %}">معرض الصور</a></li>
-                   <li><a class="dropdown-item" href="{% url 'list' %}">checklist</a></li>
-              </ul>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="newDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                GAHAR
-               </a>
-               <ul class="dropdown-menu drop-menu-end shadow-sm">
-               <li><h6 class="dropdown-header">books</h6></li>
-               <li><a class="dropdown-item" href="{% url 'pdf' %}">عربي</a></li>
-               <li><a class="dropdown-item" href="{% url 'pdf2' %}">انجليزى</a></li>
+        </li>
 
-               </ul>
-            </li>
-          </div>
-        </div>
-      </nav>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            سياسات الجوده
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><h6 class="dropdown-header">السياسات</h6></li>
+            <li><a class="dropdown-item" href="{% url 't' %}">test44</a></li>
+            <li><a class="dropdown-item" href="{% url 'rights-page' %}">معايير السلامة</a></li>
+            <li><a class="dropdown-item" href="{% url 'pt-rights' %}">حقوق وواجبات المريض</a></li>
+            <li><a class="dropdown-item" href="{% url 'x-page' %}">معايير GAHAR</a></li>
+            <li><a class="dropdown-item" href="{% url 'pressure-page' %}">إقرار القرح</a></li>
+            <li><a class="dropdown-item" href="{% url 'pictures' %}">معرض الصور</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            GAHAR
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><h6 class="dropdown-header">books</h6></li>
+            <li><a class="dropdown-item" href="{% url 'pdf' %}">عربي</a></li>
+            <li><a class="dropdown-item" href="{% url 'pdf2' %}">انجليزى</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
