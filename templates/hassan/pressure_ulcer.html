@@ -1,128 +1,59 @@
 {% extends 'hassan/base.html' %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
     <meta charset="UTF-8">
     <title>بوستر قرح الضغط</title>
     <style>
-        /* ضبط المقاس ليكون A3 (مقاس بوستر شائع) */
-        @page { size: A3; margin: 0; }
-        body { 
-            font-family: 'Cairo', 'Arial', sans-serif; 
-            margin: 0; 
-            padding: 2cm; 
-            background-color: #f4f7f6; /* خلفية هادئة */
-            color: #333;
-        }
+    /* 1. التنسيق العام المرن */
+    .poster-container { 
+        background: white; 
+        width: 95%; /* نسبة مئوية ليتكيف مع الموبايل */
+        max-width: 900px; /* حد أقصى للعرض لا يتجاوزه في الشاشات الكبيرة */
+        margin: 20px auto; 
+        padding: 40px; 
+        border-radius: 20px; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+        border-top: 15px solid #2c5038;
+    }
+
+    h1.main-title { 
+        text-align: center; 
+        color: #2c5038; 
+        font-size: 2.5rem; /* استخدام rem بدلاً من em للتحكم الأفضل */
+        margin-bottom: 30px; 
+    }
+
+    /* استخدام Flex للبيانات لضمان عدم تداخلها */
+    .field-group { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+    .field { 
+        flex: 1 1 300px; /* الحقل يأخذ مساحة مرنة */
+        background: #f8f9fa; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border-right: 8px solid #8fc0a9; 
+    }
+
+    .acknowledgment { font-size: 1.2rem; line-height: 1.6; background: #eef7f2; padding: 20px; border-radius: 15px; }
+
+    /* 2. تحسين الطباعة */
+    @media print {
+        body { background: white; }
         .poster-container { 
-            background: white; 
-            max-width: 26cm; /* يناسب عرض A3 */
-            margin: auto; 
-            padding: 2cm; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-            border-top: 15px solid #2c5038; /* لون المستشفى */
+            width: 100%; 
+            max-width: 100%; 
+            box-shadow: none; 
+            border: 2px solid #2c5038;
+            padding: 2cm;
         }
-        h1.main-title { 
-            text-align: center; 
-            color: #2c5038; 
-            font-size: 3em; 
-            margin-bottom: 50px; 
-            border-bottom: 4px solid #8fc0a9;
-            padding-bottom: 20px;
-        }
-        .section { margin-bottom: 40px; }
-        .section-title {
-            font-size: 2em;
-            color: #4a7c59;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .field-group { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px; 
-        }
-        .field { 
-            background: #f8f9fa; 
-            padding: 20px; 
-            border-radius: 10px; 
-            border-right: 8px solid #8fc0a9; 
-        }
-        .field-label { 
-            font-size: 1.2em; 
-            font-weight: bold; 
-            color: #555; 
-            display: block;
-            margin-bottom: 10px;
-        }
-        .field-input {
-            border-bottom: 2px solid #ccc;
-            width: 100%;
-            height: 30px;
-            display: inline-block;
-        }
-        .acknowledgment {
-            font-size: 1.6em;
-            line-height: 1.8;
-            background: #eef7f2;
-            padding: 30px;
-            border-radius: 15px;
-            color: #333;
-        }
-        .signature-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-            font-size: 1.4em;
-        }
-        .signature-box {
-            background: #fdfdfd;
-            border: 2px solid #eee;
-            padding: 30px;
-            border-radius: 15px;
-        }
-        .signature-title {
-            font-weight: bold;
-            color: #2c5038;
-            margin-bottom: 15px;
-            display: block;
-        }
-        .sig-field {
-            margin-bottom: 15px;
-        }
-        
-        /* تنسيق خاص للطباعة */
-        @media print {
-            body { background: white; padding: 0; }
-            .poster-container { 
-                box-shadow: none; 
-                border: none; 
-                padding: 1cm;
-            }
-            .main-title { font-size: 3.5em; }
-        }
-          @media print {
-    body {
-        padding: 0;
-        background-color: white;
+        /* إخفاء القوائم من الطباعة */
+        .navbar, footer { display: none; }
     }
-    .poster {
-        box-shadow: none;
-       
-    }
-    /* إخفاء أي عناصر غير ضرورية عند الطباعة */
-    @page {
-        margin: 0; /* تقليل الهوامش ليتناسب التصميم مع الورقة */
-    }
-}
-    </style>
-</head>
-<body>
+</style>
+
     <div class="poster-container">
         <h1 class="main-title">🏥 إقرار إثبات وجود قرح ضغط عند الدخول</h1>
         
