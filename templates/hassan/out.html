@@ -1,0 +1,51 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .safety-guide { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 950px; margin: auto; padding: 20px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    h2 { color: #2c3e50; border-right: 4px solid #e67e22; padding-right: 15px; }
+    h3 { color: #e67e22; }
+    .waste-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    .waste-table th, .waste-table td { border: 1px solid #ddd; padding: 12px; text-align: right; }
+    .waste-table th { background-color: #f8f9fa; }
+</style>
+
+<div class="safety-guide">
+    <h1 style="text-align: center; color: #2c3e50;">دليل السلامة المهنية ومكافحة العدوى</h1>
+
+    <div class="card">
+        <h2>أولاً: سياسة فصل النفايات (من المنبع)</h2>
+        <table class="waste-table">
+            <tr><th>نوع النفايات</th><th>طريقة التخلص</th><th>أمثلة</th></tr>
+            <tr><td>نفايات حادة</td><td>صندوق الأمان (Safety Box)</td><td>السرنجات، المشارط، الأمبولات</td></tr>
+            <tr><td>نفايات معدية</td><td>السلة الحمراء</td><td>أي أداة تلوثت بسوائل الجسم</td></tr>
+            <tr><td>نفايات غير خطرة</td><td>السلة السوداء</td><td>النفايات العادية (الورق، إلخ)</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>ثانياً: الميكروبات المقاومة للمضادات الحيوية (MDROs)</h2>
+        <p>هي ميكروبات طورت مقاومة لفئة أو أكثر من المضادات نتيجة الاستخدام الخاطئ لها. تنتقل في المستشفى عبر أيدي العاملين أو الأدوات غير المعقمة.</p>
+        <p><strong>أمثلة:</strong> MRSA, VRE, VRSA, Cephalosporins resistant Klebsiella.</p>
+        <p><strong>الإجراء الوقائي:</strong> يتم التعامل معها بتطبيق <em>احتياطات عزل التلامس</em> بدقة.</p>
+    </div>
+
+    <div class="card">
+        <h2>ثالثاً: السلامة المهنية للعاملين</h2>
+        <h3>المخاطر المحتملة:</h3>
+        <ul>
+            <li>الوخز بالأدوات الحادة والعدوى المنقولة بالدم.</li>
+            <li>العدوى التنفسية والجلدية.</li>
+            <li>التعرض للانسكابات البيولوجية.</li>
+        </ul>
+        <h3>دعم المؤسسة للسلامة:</h3>
+        <ul>
+            <li><strong>التدريبات:</strong> برامج دورية للتدريب على مكافحة العدوى.</li>
+            <li><strong>التطعيمات:</strong> توفير لقاحات (الإنفلونزا الموسمية، كوفيد-19، التهاب كبدي B).</li>
+            <li><strong>التجهيزات:</strong> توفير الواقيات الشخصية (PPE) ومستلزمات غسل الأيدي.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

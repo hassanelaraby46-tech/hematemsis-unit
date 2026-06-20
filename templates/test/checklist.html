@@ -1,0 +1,56 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="mb-0">قائمة التحقق الرقمية لمعايير GAHAR</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">اسم القسم:</label>
+                            {{ form.department }}
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-3 text-secondary">بنود المراجعة:</h5>
+
+                        <div class="form-check form-switch mb-3 p-3 border rounded">
+                            {{ form.patient_id_verified }}
+                            <label class="form-check-label me-3">التأكد من هوية المريض</label>
+                        </div>
+
+                        <div class="form-check form-switch mb-3 p-3 border rounded">
+                            {{ form.policies_updated }}
+                            <label class="form-check-label me-3">السياسات والبروتوكولات محدثة</label>
+                        </div>
+
+                        <div class="form-check form-switch mb-3 p-3 border rounded">
+                            {{ form.hand_hygiene_followed }}
+                            <label class="form-check-label me-3">الالتزام بـ "الخمس لحظات" لغسل الأيدي</label>
+                        </div>
+
+                        <div class="form-check form-switch mb-4 p-3 border rounded">
+                            {{ form.waste_segregation_correct }}
+                            <label class="form-check-label me-3">فصل النفايات صحيح (من المنبع)</label>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">ملاحظات إضافية:</label>
+                            {{ form.notes }}
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 btn-lg">حفظ البيانات</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,21 +1,30 @@
 {% extends 'hassan/base.html' %}
 {% load static %}
 
+{% block title %}الرئيسية - القيء الدموي{% endblock %}
+
 {% block content %}
-
-    <h1>مرحباً بك في وحدة القئ الدموي</h1>
-    
-    <img src="{% static 'image/s.png' %}" alt="صورة الوحدة" class="img-fluid w-100 rounded shadow">
-    <div class="row">
-  <div class="col-md-4">
-    <div class="card shadow">
-      <div class="card-body">
-        <h5 class="card-title">مع تحيات</h5>
-        <p class="card-text"> hematemsis unit</p>
-        <a href="{% url 'pt-rights' %}" class="btn btn-primary">عرض المزيد</a>
-      </div>
+<div class="container mt-4">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">مرحباً بك في وحدة القيء الدموي</h1><br>
+        <p class="lead text-muted">نعمل معاً لضمان سلامة المرضى وتقديم أفضل رعاية طبية</p>
     </div>
-  </div>
-  </div>
+    
+    <div class="mb-5">
+        <img src="{% static 'image/s.png' %}" alt="صورة الوحدة" class="img-fluid w-100 rounded shadow-lg">
+    </div>
 
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 text-center">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold">مع تحيات فريق عملنا</h5>
+                    <p class="card-text text-secondary">Hematemesis Unit</p>
+                    <a href="{% url 'pt-rights' %}" class="btn btn-outline-primary btn-lg mt-2">عرض حقوق وواجبات المريض</a>
+                </div>
+                <li>hassan_elaraby</li>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

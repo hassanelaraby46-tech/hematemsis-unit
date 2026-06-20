@@ -1,0 +1,71 @@
+{% extends 'hassan/base.html' %}
+
+{% load static %} 
+
+{% block content %}
+<style>
+    .hygiene-section {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .hygiene-title {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    .hygiene-card {
+        background: #ffffff;
+        border: 1px solid #e1e1e1;
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .hygiene-card:hover {
+        transform: translateY(-5px);
+        border-color: #3498db;
+    }
+    .card-number {
+        font-size: 24px;
+        font-weight: bold;
+        color: #3498db;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        color: #555;
+    }
+</style>
+
+<div class="hygiene-section">
+    <h2 class="hygiene-title">اللحظات الخمس لغسل الأيدي</h2>
+    <div class="grid-container">
+        <div class="hygiene-card">
+            <div class="card-number">1</div>
+            <p class="card-text"><strong>قبل ملامسة المريض:</strong> مثل فحص المريض أو قياس العلامات الحيوية</p>
+        </div>
+        <div class="hygiene-card">
+            <div class="card-number">2</div>
+            <p class="card-text"><strong>قبل الإجراء النظيف أو الاختراقي:</strong> مثل تركيب الكانيولا أو القسطرة البوليه.</p>
+        </div>
+        <div class="hygiene-card">
+            <div class="card-number">3</div>
+            <p class="card-text"><strong>بعد احتمالية التعرض لسوائل الجسم:</strong> مثل تفريغ كيس جمع البول أو التشفيط.</p>
+        </div>
+        <div class="hygiene-card">
+            <div class="card-number">4</div>
+            <p class="card-text"><strong>بعد ملامسة المريض:</strong> بعد الانتهاء من الفحص أو قياس العلامات الحيوية.</p>
+        </div>
+        <div class="hygiene-card">
+            <div class="card-number">5</div>
+            <p class="card-text"><strong>بعد ملامسة بيئة المريض:</strong> ملامسة الأجهزة أو الأثاث المحيط بالمريض.</p>
+        </div>
+    </div>
+</div>
+  {% endblock %}

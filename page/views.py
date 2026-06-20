@@ -1,12 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-#from django.http import HttpResponse
-# Create your views here.
-
 from django.views.generic import ListView , DetailView
-
-from .models import Poster
+from .models import Poster 
 from .models import StaticPage
+from django.contrib.auth.decorators import login_required
+from .forms import ChecklistForm
+from django.contrib import messages
+#from django.http import HttpResponse
 
 
 class PosterListView(ListView):
@@ -33,4 +33,65 @@ class Hassan(TemplateView):
 
 def ptrights(request):
     return render(request,'hassan/pt_rights.html',)
+
+def infection(request):
+    return render(request,'hassan/5 moments.html',)
+
+
+def hand(request):
+    return render(request,'hassan/hand-wash.html',)
+
+def PPE(request):
+    return render(request,'hassan/PPE.html',)
+
+
+def iso(request):
+    return render(request,'hassan/isolation.html',)
+
+
+def Inj(request):
+    return render(request,'hassan/injection.html',)
+
+def U(request):
+    return render(request,'hassan/utilization.html',)
+
+def out(request):
+    return render(request,'hassan/out.html',)
+
+def vap(request):
+    return render(request,'bundles/vap.html',)
+
+def test(request):
+    return render(request,'test/t.html',)
+
+
+
+@login_required
+def gahar_checklist_view(request):
+    if request.method == 'POST':
+        form = ChecklistForm(request.POST)
+        if form.is_valid():
+            checklist = form.save(commit=False)
+            checklist.inspector = request.user # حفظ المستخدم الحالي كمراجع
+            checklist.save()
+            messages.success(request, 'تم حفظ قائمة التحقق بنجاح!')
+            return redirect('home')
+    else:
+        form = ChecklistForm()
+    
+    return render(request, 'test/checklist.html', {'form': form})
+
+
+def g(request):
+    return render(request,'test/gahar_ar.html',)
+
+def gahar(request):
+    return render(request,'test/gahar.html',)
+
+
+
+
+
+
+
 

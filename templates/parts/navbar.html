@@ -1,26 +1,62 @@
-{% load static %} 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="{% url 'home' %}">
-        <img src="{% static 'image/logo.png' %}" alt="Logo" width="100" height="50" class="logo-image" >
-        وحدة القئ الدموي
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+        <img src="{% static 'image/logo.png' %}" alt="Logo" width="50" height="40" class="me-2 rounded">
+        وحدة القيء الدموي
     </a>
     
-    <div class="navbar-nav">
-      <a class="nav-link" href="{% url 'home' %}">الرئيسية</a>
-      
-      <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          القسم
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="{% url 'pictures' %}">معرض الصور</a></li>
-          <li><a class="dropdown-item" href="{% url 'pressure-page' %}">إقرار القرح</a></li>
-          <li><a class="dropdown-item" href="{% url 'x-page' %}">معايير GAHAR</a></li>
-          <li><a class="dropdown-item" href="{% url 'rights-page' %}">معايير السلامه</a></li>
-          <li><a class="dropdown-item" href="{% url 'pt-rights' %}">حقوق وواجبات</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">الرئيسية</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          مكافحه العدوى
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <li><h6 class="dropdown-header">دليل مكافحة العدوى</h6></li>
+            <li><a class="dropdown-item" href="{% url '5 moments' %}">الخمس لحظات لغسل الأيدي</a></li>
+            <li><a class="dropdown-item" href="{% url 'typesofhandwash' %}">أنواع غسيل الأيدي</a></li>
+            <li><a class="dropdown-item" href="{% url 'PPE' %}">الواقيات الشخصية</a></li>
+            <li><a class="dropdown-item" href="{% url 'isolation' %}">احتياطات العزل</a></li>
+            <li><a class="dropdown-item" href="{% url 'injection' %}">احتياطات الحقن</a></li>
+            <li><a class="dropdown-item" href="{% url 'uti' %}">أساليب العمل ومعالجة الآلات</a></li>
+            <li><a class="dropdown-item" href="{% url 'النفايات' %}">فصل النفايات</a></li>
+            <li><a class="dropdown-item" href="{% url 'vbundle' %}">حزمة الوقاية التنفسية (VAP)</a></li>
+          </ul>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="newDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               سياسات الجوده
+               </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                   <li><h6 class="dropdown-header">السياسات</h6></li>
+                   <li><a class="dropdown-item" href="{% url 't' %}">test44</a></li>
+                   <li><a class="dropdown-item" href="{% url 'rights-page' %}">معايير السلامة</a></li>
+                   <li><a class="dropdown-item" href="{% url 'pt-rights' %}">حقوق وواجبات المريض</a></li>
+                   <li><a class="dropdown-item" href="{% url 'x-page' %}">معايير GAHAR</a></li>
+                   <li><a class="dropdown-item" href="{% url 'pressure-page' %}">إقرار القرح</a></li>
+                   <li><a class="dropdown-item" href="{% url 'pictures' %}">معرض الصور</a></li>
+                   <li><a class="dropdown-item" href="{% url 'list' %}">checklist</a></li>
+              </ul>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="newDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                GAHAR
+               </a>
+               <ul class="dropdown-menu drop-menu-end shadow-sm">
+               <li><h6 class="dropdown-header">books</h6></li>
+               <li><a class="dropdown-item" href="{% url 'pdf' %}">عربي</a></li>
+               <li><a class="dropdown-item" href="{% url 'pdf2' %}">انجليزى</a></li>
+
+               </ul>
+            </li>
+          </div>
+        </div>
+      </nav>

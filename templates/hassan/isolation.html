@@ -1,0 +1,70 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .isolation-guide { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: auto; padding: 20px; }
+    .section-box { background: #fff; border: 1px solid #dcdde1; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    h2 { color: #2c3e50; border-right: 4px solid #e74c3c; padding-right: 15px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+    th { background-color: #f8f9fa; color: #2c3e50; }
+    .ppe-steps { display: flex; gap: 20px; flex-wrap: wrap; }
+    .step-box { background: #fdf2f2; padding: 15px; border-radius: 8px; flex: 1; min-width: 300px; }
+</style>
+
+<div class="isolation-guide">
+    <h1 style="text-align: center; color: #2c3e50;">دليل احتياطات العزل الطبي</h1>
+
+    <div class="section-box">
+        <h2>جدول أنواع العزل</h2>
+        <table>
+            <tr>
+                <th>نوع العزل</th>
+                <th>أمثلة</th>
+                <th>متطلبات الغرفة</th>
+                <th>الواقيات الشخصية</th>
+            </tr>
+            <tr>
+                <td><strong>هواء</strong></td>
+                <td>الدرن (TB)، الحصبة، الجدري</td>
+                <td>ضغط سلبي + باب مغلق + غرفه فرديه</td>
+                <td>ماسك N95</td>
+            </tr>
+            <tr>
+                <td><strong>رذاذ</strong></td>
+                <td>كوفيد-19، إنفلونزا، التهاب سحائي ، التهاب رئوى</td>
+                <td>غرفة فردية</td>
+                <td>ماسك جراحي + فيس شيلد</td>
+            </tr>
+            <tr>
+                <td><strong>تلامس</strong></td>
+                <td>الجرب، الميكروبات المقاومة (MDROs)، الهيربس</td>
+                <td>أدوات مخصصة للمريض</td>
+                <td>جاون + جوانتي</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="ppe-steps">
+        <div class="step-box">
+            <h3>ترتيب الارتداء:</h3>
+            <p>1. الجاون ← 2. الماسك ← 3. واقي العين/الوجه ← 4. القفازات.</p>
+        </div>
+        <div class="step-box">
+            <h3>ترتيب الخلع:</h3>
+            <p>1. القفازات ← 2. غسل الأيدي ← 3. واقي الوجه ← 4. الجاون ← 5. الماسك ← 6. غسل الأيدي.</p>
+            <small><em>*يتم الخلع داخل غرفة المريض ما عدا الماسك.</em></small>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h3>تعليمات هامة:</h3>
+        <ul>
+            <li><strong>دور الطبيب:</strong> إصدار أمر العزل رسمياً، إبلاغ فريق مكافحة العدوى والترصد.</li>
+            <li><strong>المرجعية:</strong> ارجع دائماً لقائمة الأمراض المعدية الموجودة في قسمك للتعرف على نوع العزل المطلوب.</li>
+            <li><strong>بعد الوفاة:</strong> يُغلق الجثمان بإحكام، توضع علامة تحذيرية على كيس الموتى توضح نوع العدوى، ويُبلغ مسؤول المرحمة.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

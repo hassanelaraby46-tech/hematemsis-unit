@@ -1,0 +1,46 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .hand-hygiene-container { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 30px auto; line-height: 1.6; }
+    .page-title { color: #2c3e50; text-align: center; margin-bottom: 30px; border-bottom: 3px solid #3498db; display: inline-block; width: 100%; }
+    .type-card { background: #fff; border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .type-title { color: #3498db; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+    .warning-box { background: #fdf2f2; border-left: 5px solid #e74c3c; padding: 15px; margin-top: 20px; }
+    ul { padding-right: 20px; }
+</style>
+
+<div class="hand-hygiene-container">
+    <h2 class="page-title">أنواع غسل الأيدي</h2>
+
+    <div class="type-card">
+        <div class="type-title">1. الغسل الروتيني (البسيط)</div>
+        <p><strong>المدة:</strong> 40 - 60 ثانية.</p>
+        <p><strong>الطريقة:</strong> استخدام الماء الجاري والصابون (تكرار كل خطوة 5 مرات).</p>
+        <p><strong>الهدف:</strong> إزاحة الميكروبات المؤقتة الناتجة عن ملامسة الأسطح.</p>
+    </div>
+
+    <div class="type-card">
+        <div class="type-title">2. الدلك بالكحول (Alcohol Rub)</div>
+        <p><strong>المدة:</strong> 30 - 60 ثانية.</p>
+        <p><strong>الهدف:</strong> القضاء على الميكروبات قبل الإجراءات الاختراقية (مثل تركيب الكانيولا أو القسطرة).</p>
+        <p><em>ملاحظة: يستخدم فقط في حالة عدم وجود اتساخ مرئي.</em></p>
+    </div>
+
+    <div class="type-card">
+        <div class="type-title">3. الغسل الجراحي (Surgical Scrub)</div>
+        <p><strong>المدة:</strong> 5 دقائق.</p>
+        <p><strong>الطريقة:</strong> باستخدام بيتادين رغوي 7.5% حتى فوق الكوع بـ 5 سم.</p>
+        <p><strong>الاستخدامات:</strong> العمليات الجراحية، تركيب الخط الوريدي المركزي، والبزل.</p>
+    </div>
+
+    <div class="warning-box">
+        <h3 style="color: #e74c3c;">⚠️ موانع استخدام الكحول (يجب استخدام الماء والصابون):</h3>
+        <ul>
+            <li>وجود اتساخ ظاهري على الأيدي.</li>
+            <li>في حالة بلل اليدين.</li>
+            <li>بعد التعامل مع مرضى الإسهال المعدي (مثل <em>Clostridium difficile</em> أو <em>Norovirus</em>).</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

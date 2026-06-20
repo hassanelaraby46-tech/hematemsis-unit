@@ -1,0 +1,63 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .medical-guide { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 950px; margin: auto; padding: 20px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    h2 { color: #2c3e50; border-right: 4px solid #27ae60; padding-right: 15px; margin-top: 30px; }
+    h3 { color: #27ae60; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+    th { background-color: #f8f9fa; }
+    .indicator-box { background: #f1f7fe; padding: 15px; border-radius: 8px; }
+</style>
+
+<div class="medical-guide">
+    <h1 style="text-align: center; color: #2c3e50;">دليل أساليب العمل ومعالجة الآلات الطبية</h1>
+
+    <div class="card">
+        <h2>1. أساليب العمل الإكلينيكي</h2>
+        <table>
+            <tr><th>الأسلوب</th><th>التعريف</th><th>المثال</th></tr>
+            <tr><td>نظيف</td><td>تلامس جلد/غشاء سليم/بدون اختراق</td><td>قياس الضغط، </td></tr>
+            <tr><td>مانع للتلوث</td><td>اختراق للجلد والغشاء المخاطى ويتم خارج غرفه العمليات</td><td>غيار الجروح، خياطة جروح صغيرة ،غيار على الجروح</td></tr>
+            <tr><td>معقم</td><td>إجراء اختراقي داخل العمليات</td><td>تركيب سنترلاين، العمليات الجراحية</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>2. تصنيف سبولدنج لمعالجة الآلات</h2>
+        <table>
+            <tr><th>الخطر</th><th>الاستخدام</th><th>المعالجة</th><th>أمثلة</th></tr>
+            <tr><td>منخفض</td><td>جلد سليم</td><td>تنظيف/كحول</td><td>سماعة، ترمومتر</td></tr>
+            <tr><td>متوسط</td><td>غشاء مخاطي</td><td>تطهير عالي (سيدكس 20-90د)</td><td>مناظير</td></tr>
+            <tr><td>مرتفع</td><td>اختراق الجلد</td><td> تنظيف ثم تعقيم(أوتوكلاف)</td><td>آلات جراحية</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>3. مستويات إعادة المعالجة</h2>
+        <ul>
+            <li><strong>التنظيف:</strong> إزالة الأوساخ المرئية بالماء والصابون.</li>
+            <li><strong>التطهير عالي المستوى:</strong> القضاء على الميكروبات (ما عدا المتحوصلة) باستخدام السيدكس.</li>
+            <li><strong>التعقيم:</strong> القضاء التام على كل الميكروبات (بالبلازما أو الأوتوكلاف).</li>
+        </ul>
+    </div>
+
+    <div class="card indicator-box">
+        <h2>4. مراقبة التعقيم وصلاحية التخزين</h2>
+        <p><strong>صلاحية التخزين:</strong></p>
+        <ul>
+            <li>داخل رول التعقيم: 3 أشهر.</li>
+            <li>ورق الكريب المزدوج: شهر واحد.</li>
+            <li>الآلات المطهرة: 24 ساعة.</li>
+        </ul>
+        <p><strong>المؤشرات الكيميائية: (الفرق بين الباكت المعقم والغير معقم )</strong></p>
+        <ul>
+            <li>خارجي: من وردي إلى بني غامق (بعد التعقيم).</li>
+            <li>داخلي: من أزرق/أصفر إلى أسود (بعد التعقيم).</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

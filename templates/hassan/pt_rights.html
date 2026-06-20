@@ -1,107 +1,69 @@
 {% extends 'hassan/base.html' %}
+{% load static %}
+
 {% block content %}
+<style>
+    @page { size: A1; margin: 20mm; }
+    .poster-container {
+        background: #ffffff;
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 50px;
+        border: 15px solid #2c3e50;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .poster-header { text-align: center; margin-bottom: 50px; }
+    .poster-header h1 { color: #2c3e50; font-size: 55px; font-weight: 800; border-bottom: 6px solid #d35400; padding-bottom: 20px; display: inline-block; }
+    .columns-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .column-box { background: #fdfdfd; padding: 30px; border-radius: 15px; border: 2px dashed #bdc3c7; }
+    h2 { color: #d35400; font-size: 40px; margin-bottom: 30px; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 20px; font-size: 28px; line-height: 1.6; padding-right: 40px; position: relative; }
+    .rights-list li::before { content: "✔"; position: absolute; right: 0; color: #27ae60; font-size: 30px; font-weight: bold; }
+    .duties-list li::before { content: "📋"; position: absolute; right: 0; color: #2980b9; font-size: 30px; }
+</style>
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        /* إعدادات الطباعة لملء الورقة الكبيرة */
-        @page { size: A1; margin: 10mm; } 
-
-        body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; padding: 20px; }
-        
-        .poster { 
-            background: white; 
-            max-width: 1400px; /* عرض أكبر للبوستر */
-            margin: auto; 
-            padding: 60px; /* مساحات داخلية أكبر */
-            border: 10px solid #2c3e50 !important; 
-            border-radius: 30px; 
-        }
-
-        h1 { 
-            text-align: center; 
-            color: #2c3e50; 
-            border-bottom: 6px solid #2c3e50; 
-            padding-bottom: 30px; 
-            margin-bottom: 50px; 
-            font-size: 55px; /* عنوان ضخم */
-        }
-        
-        .container { display: flex; gap: 60px; }
-        .column { flex: 1; }
-        
-        h2 { 
-            color: #d35400; 
-            border-bottom: 4px solid #d35400; 
-            padding-bottom: 15px; 
-            font-size: 40px; /* عنوان الأعمدة ضخم */
-            margin-bottom: 25px;
-        }
-        
-        ul { list-style-type: none; padding: 0; }
-        li { 
-            margin-bottom: 25px; 
-            font-size: 28px; /* نص الفقرات مكبر جداً للرؤية من مسافة */
-            line-height: 1.6; 
-            padding-right: 40px; 
-            position: relative; 
-        }
-        li::before { content: "✔"; position: absolute; right: 0; color: #27ae60; font-weight: bold; font-size: 30px; }
-        
-        /* إجبار المتصفح على الطباعة بالألوان والإطار */
-        @media print {
-            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white; }
-            .poster { border: 10px solid #2c3e50 !important; }
-        }
-    </style>
-</head>
-<body>
-    <div class="poster">
+<div class="poster-container">
+    <header class="poster-header">
         <h1>وثيقة حقوق وواجبات المرضى - مستشفيات جامعة الإسكندرية</h1>
+    </header>
 
-        <div class="container">
-            <div class="column">
-                <h2>أولاً: حقوق المريض</h2>
-                <ul>
-                    <li>الحق في الحصول على الرعاية الطبية اللائقة والآمنة.</li>
-                    <li>الحق في الحصول على الخدمة الطبية على مدار 24 ساعة يومياً.</li>
-                    <li>الحق في الحصول على الرعاية التي يقوم بها الطبيب المعالج والطبيب المسؤول.</li>
-                    <li>الحق في معرفة التراخيص المتعلقة بالأطباء والعاملين في المستشفى.</li>
-                    <li>الحق في الحصول على أفضل خدمة طبية آمنة.</li>
-                    <li>الحق في أن تطلع على التشخيص الدقيق وخطة العلاج.</li>
-                    <li>الحق في أن يتابع الفريق الطبي معك مدى استجابتك لخطوات العلاج.</li>
-                    <li>الحق في أن يقوم الفريق الطبي بتعليم المريض على مقياس الألم وإعطاء العلاج المناسب.</li>
-                    <li>من حقك رفض العلاج أو عدم الاستمرار فيه بعد توضيح المخاطر.</li>
-                    <li>يحق للمريض توكيل أحد أفراد العائلة ليكون نائباً عنه.</li>
-                    <li>الحصول على موافقتك الكتابية قبل العمليات والتدخلات.</li>
-                    <li>الحق في معرفة أسعار الخدمات وتوفير فاتورة مفصلة.</li>
-                    <li>الحق في تقديم الشكاوى وتلقي رد جدّي بشأنها.</li>
-                </ul>
-            </div>
+    <div class="columns-wrapper">
+        <div class="column-box">
+            <h2>أولاً: حقوق المريض</h2>
+            <ul class="rights-list">
+                <li>الحق في الحصول على الرعاية الطبية اللائقة والآمنة على مدار 24 ساعة.</li>
+                <li>الحق في الحصول على الرعاية التي يقوم بها الطبيب المعالج والمسؤول.</li>
+                <li>الحق في معرفة التراخيص المتعلقة بالأطباء والعاملين في المستشفى.</li>
+                <li>الحق في الاطلاع على التشخيص الدقيق وخطة العلاج.</li>
+                <li>الحق في متابعة استجابتك لخطوات العلاج من قبل الفريق الطبي.</li>
+                <li>الحق في تعليم المريض مقياس الألم وإعطاء العلاج المناسب.</li>
+                <li>الحق في رفض العلاج أو عدم الاستمرار فيه بعد توضيح المخاطر.</li>
+                <li>الحق في توكيل أحد أفراد العائلة ليكون نائباً عنه.</li>
+                <li>الحق في الحصول على موافقة كتابية قبل العمليات والتدخلات.</li>
+                <li>الحق في معرفة أسعار الخدمات وتوفير فاتورة مفصلة.</li>
+                <li>الحق في تقديم الشكاوى وتلقي رد جدّي بشأنها.</li>
+            </ul>
+        </div>
 
-            <div class="column">
-                <h2>ثانياً: واجبات المريض</h2>
-                <ul>
-                    <li>الالتزام بمواعيد الزيارة المحددة.</li>
-                    <li>الالتزام بهدوء واتباع النظام أثناء زيارة المرضى.</li>
-                    <li>إمكانية وجود مرافق للمريض في حالة كان المريض طفل (أقل من 12 عاماً).</li>
-                    <li>يجب الالتزام بالمواعيد الخاصة بمرافق المستشفى.</li>
-                    <li>يمنع إدخال الأطعمة من خارج المستشفى.</li>
-                    <li>الالتزام بسياسة عدم التدخين وفق القانون.</li>
-                    <li>يجب تقديم كافة المعلومات المتعلقة بالتاريخ المرضي.</li>
-                    <li>إبلاغ الفريق الطبي بأي تغييرات حدثت خلال فترة العلاج.</li>
-                    <li>لا يحق للمريض أو أهله الاحتفاظ بأية أدوية أو عدم اتباع الإرشادات.</li>
-                    <li>الالتزام بالمواعيد المقررة للزيارات التابعة في العيادات الخارجية.</li>
-                    <li>الالتزام بالمواعيد المقررة للعمليات الجراحية والفحوصات.</li>
-                    <li>يجب إحضار الملفات الطبية وتسليمها لمكتب الأمانات.</li>
-                    <li>الالتزام بالمبادرة بدون تأخير بعد انتهاء الإجراءات الطبية.</li>
-                    <li>أي تأخير عن الموعد سوف يكون على حساب مسؤولية المريض.</li>
-                </ul>
-            </div>
+        <div class="column-box">
+            <h2>ثانياً: واجبات المريض</h2>
+            <ul class="duties-list">
+                <li>الالتزام بمواعيد الزيارة المحددة والهدوء واتباع النظام.</li>
+                <li>إمكانية وجود مرافق للمريض في حالة كان المريض طفلاً (أقل من 12 عاماً).</li>
+                <li>الالتزام بالمواعيد الخاصة بمرافق المستشفى.</li>
+                <li>يمنع إدخال الأطعمة من خارج المستشفى.</li>
+                <li>الالتزام بسياسة عدم التدخين وفقاً للقانون.</li>
+                <li>تقديم كافة المعلومات المتعلقة بالتاريخ المرضي بدقة.</li>
+                <li>إبلاغ الفريق الطبي بأي تغييرات حدثت خلال فترة العلاج.</li>
+                <li>يمنع الاحتفاظ بأية أدوية أو مخالفة الإرشادات الطبية.</li>
+                <li>الالتزام بمواعيد المراجعة للعيادات الخارجية والعمليات والفحوصات.</li>
+                <li>تسليم الملفات الطبية لمكتب الأمانات عند طلبها.</li>
+                <li>الالتزام بالمغادرة بدون تأخير بعد انتهاء الإجراءات الطبية.</li>
+                <li>يتحمل المريض مسؤولية أي تأخير عن الموعد المقرر.</li>
+            </ul>
         </div>
     </div>
-</body>
-</html>
+</div>
 {% endblock %}
