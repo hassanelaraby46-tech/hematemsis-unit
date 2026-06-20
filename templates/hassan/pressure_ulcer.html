@@ -33,6 +33,18 @@
         .poster-container { box-shadow: none; border: 1px solid #2c5038; width: 100%; }
         .navbar, footer, #backToTop { display: none; }
     }
+    /* تحسين الاستجابة للموبايل: تغيير الـ Grid إلى عمود واحد */
+    @media (max-width: 768px) {
+        .field-group { 
+            grid-template-columns: 1fr; /* تحويل الأعمدة لعمود واحد فقط */
+        }
+        .signature-section { 
+            grid-template-columns: 1fr; /* تحويل التوقيعات لعمود واحد */
+        }
+        .main-title { font-size: 1.8rem; }
+        .acknowledgment { font-size: 1.1rem; }
+        .poster-container { padding: 15px; }
+    }
 </style>
 
 <div class="container">
