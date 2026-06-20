@@ -34,3 +34,15 @@ class GaharChecklist(models.Model):
 
     def __str__(self):
         return f"{self.department} - {self.date}"
+    
+
+    from django.db import models
+
+class VisitorLog(models.Model):
+    ip_address = models.GenericIPAddressField()
+    page_visited = models.CharField(max_length=255)
+    user_agent = models.TextField(null=True, blank=True) # لمعرفة نوع المتصفح
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.ip_address} visited {self.page_visited}"
