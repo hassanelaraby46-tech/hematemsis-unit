@@ -3,25 +3,82 @@
 
 {% block content %}
 <style>
+    /* استيراد خط عربي جميل */
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
     @page { size: A1; margin: 20mm; }
+    
+    body { font-family: 'Cairo', sans-serif; background-color: #f4f7f6; }
+
     .poster-container {
         background: #ffffff;
         max-width: 1400px;
-        margin: 20px auto;
-        padding: 50px;
-        border: 15px solid #2c3e50;
+        margin: 40px auto;
+        padding: 60px;
+        border: 20px solid #2c3e50;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
+    
     .poster-header { text-align: center; margin-bottom: 50px; }
-    .poster-header h1 { color: #2c3e50; font-size: 55px; font-weight: 800; border-bottom: 6px solid #d35400; padding-bottom: 20px; display: inline-block; }
-    .columns-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-    .column-box { background: #fdfdfd; padding: 30px; border-radius: 15px; border: 2px dashed #bdc3c7; }
-    h2 { color: #d35400; font-size: 40px; margin-bottom: 30px; }
+    
+    .poster-header h1 { 
+        color: #2c3e50; 
+        font-size: 50px; 
+        font-weight: 800; 
+        border-bottom: 8px solid #d35400; 
+        padding-bottom: 15px; 
+        display: inline-block; 
+    }
+
+    .columns-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    
+    .column-box { 
+        background: #ffffff; 
+        padding: 40px; 
+        border: 1px solid #ddd;
+        border-radius: 20px;
+    }
+    
+    h2 { 
+        color: #d35400; 
+        font-size: 35px; 
+        margin-bottom: 30px; 
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+    
     ul { list-style: none; padding: 0; }
-    li { margin-bottom: 20px; font-size: 28px; line-height: 1.6; padding-right: 40px; position: relative; }
-    .rights-list li::before { content: "✔"; position: absolute; right: 0; color: #27ae60; font-size: 30px; font-weight: bold; }
-    .duties-list li::before { content: "📋"; position: absolute; right: 0; color: #2980b9; font-size: 30px; }
+    
+    li { 
+        margin-bottom: 25px; 
+        font-size: 24px; 
+        line-height: 1.8; 
+        padding-right: 50px; 
+        position: relative; 
+    }
+
+    .rights-list li::before { 
+        content: "✔"; 
+        position: absolute; 
+        right: 0; 
+        color: #27ae60; 
+        font-size: 35px; 
+        font-weight: bold; 
+    }
+    
+    .duties-list li::before { 
+        content: "⚠️"; 
+        position: absolute; 
+        right: 0; 
+        color: #c0392b; 
+        font-size: 30px; 
+    }
+    @media (max-width: 768px) {
+    .columns-wrapper { grid-template-columns: 1fr; }
+}
 </style>
 
 <div class="poster-container">
