@@ -116,13 +116,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
 # هذا المسار يحدد أين ستذهب ملفات الـ CSS والصور بعد تجميعها
-STATIC_ROOT = '/home/hassan22/hematemsis-unit/static'
+STATIC_ROOT = '/home/hassan22/hematemsis-unit/staticfiles'
 
 # تأكد أن هذا السطر موجود أيضاً
 STATIC_URL = '/static/'
