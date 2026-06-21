@@ -1,49 +1,69 @@
 {% extends 'hassan/base.html' %}
 {% load static %}
 
-{% block title %}سياسة الأوامر الطبية الشفهية والتليفونية{% endblock %}
+{% block title %}سياسة الأوامر  الشفهية والتليفونية{% endblock %}
 
 {% block content %}
-<div class="container mt-5 mb-5">
+<div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="p-5 shadow bg-white border border-secondary rounded">
-                
-                <div class="text-center mb-5 border-bottom pb-3">
-                    <h3 class="fw-bold text-primary">سياسة الأوامر الطبية الشفهية والتليفونية</h3>
+        <div class="col-lg-10 col-xl-8">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-primary py-4 text-white text-center border-0">
+                    <h3 class="fw-bold mb-0"><i class="bi bi-file-earmark-medical me-2"></i> سياسة الأوامر الشفهية والتليفونية</h3>
                 </div>
 
-                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-shield-lock me-2"></i> 1. حالات الأوامر الشفهية:</h5>
-                <p>يتم الاقتصار على الأوامر الشفهية فقط في الحالات الطارئة التالية:</p>
-                <ul class="list-group list-group-flush mb-4">
-                    <li class="list-group-item">• حالات الطوارئ.</li>
-                    <li class="list-group-item">• أثناء العمليات والإفاقة.</li>
-                    <li class="list-group-item">• أثناء التعامل مع حالة حرجة يصعب معها الكتابة.</li>
-                    <li class="list-group-item">• إعطاء أدوية لإنقاذ حياة المريض.</li>
-                    <li class="list-group-item">• عند إبلاغ النتائج الحرجة.</li>
-                    <li class="list-group-item">• استكمال المستندات الورقية التي قد يؤدي تأخيرها لضرر مباشر.</li>
-                </ul>
+                <div class="card-body p-4 p-md-5">
+                    
+                    <div class="mb-5">
+                        <h5 class="text-primary fw-bold mb-3"><i class="bi bi-shield-shaded me-2"></i> 1. حالات الأوامر الشفهية</h5>
+                        <p class="text-muted small">يتم الاقتصار على الأوامر الشفهية فقط في الحالات الطارئة التالية:</p>
+                       <div class="mb-5">
+    
+    <div class="row g-2">
+        
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> حالات الطوارئ</div></div>
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> أثناء العمليات والإفاقة</div></div>
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> أثناء التعامل مع حالة حرجة</div></div>
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> إنقاذ حياة المريض</div></div>
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> إبلاغ النتائج الحرجة</div></div>
+        <div class="col-md-6"><div class="px-3 py-2 bg-light rounded-3 border-end border-4 border-success"><i class="bi bi-check2-circle text-success me-2"></i> استكمال مستندات ضرورية</div></div>
 
-                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-person-badge me-2"></i> 2. الصلاحيات:</h5>
-                <p><strong>مُصدر الأمر:</strong> رئيس القسم، الأخصائي، والطبيب المقيم.</p>
-                <p><strong>متلقي الأمر:</strong> الأطباء المقيمون، الصيادلة، والتمريض.</p>
+    </div>
+</div>
+                    </div>
 
-                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-clipboard-check me-2"></i> 3. إجراءات تنفيذ الأمر:</h5>
-                <div class="bg-light p-3 rounded">
-                    <ol class="mb-0">
-                        <li>تسجيل الأمر في تذكرة المريض فوراً.</li>
-                        <li>إعادة قراءة الأمر لفظياً على المتلقي للتأكد من صحته.</li>
-                        <li>كتابة اسم الطبيب مُصدر الأمر والاستعانة بشاهد إن وُجد.</li>
-                        <li>توقيع المتلقي باسمه مع كتابة التاريخ والساعة.</li>
-                        <li><strong>تنبيه:</strong> يجب على الطبيب توثيق الأمر شفهياً أو تليفونياً في الملف الطبي بالتوقيع خلال 24 ساعة كحد أقصى.</li>
-                    </ol>
-                </div>
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h5 class="text-primary fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i> 2. الصلاحيات</h5>
+                            <div class="d-flex gap-4">
+                                <div class="p-3 border rounded-3 bg-white w-100 shadow-sm">
+                                    <small class="text-muted d-block">مُصدر الأمر</small>
+                                    <strong class="text-dark">رئيس القسم - الأخصائي - الطبيب المقيم</strong>
+                                </div>
+                                <div class="p-3 border rounded-3 bg-white w-100 shadow-sm">
+                                    <small class="text-muted d-block">متلقي الأمر</small>
+                                    <strong class="text-dark">الأطباء المقيمون - الصيادلة - التمريض</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="text-center mt-5 d-print-none">
-                    <button onclick="window.print();" class="btn btn-primary px-5">
-                        <i class="bi bi-printer"></i> طباعة السياسة
-                    </button>
-                    <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">العودة للرئيسية</a>
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-4 border-start border-4 border-primary">
+                        <h5 class="text-primary fw-bold mb-3"><i class="bi bi-list-check me-2"></i> 3. إجراءات تنفيذ الأمر</h5>
+                        <ol class="list-group list-group-numbered border-0">
+                            <li class="list-group-item bg-transparent border-0 py-2">تسجيل الأمر في تذكرة المريض فوراً.</li>
+                            <li class="list-group-item bg-transparent border-0 py-2">إعادة قراءة الأمر لفظياً (Read-Back) للتأكد من صحته.</li>
+                            <li class="list-group-item bg-transparent border-0 py-2">كتابة اسم الطبيب مُصدر الأمر والاستعانة بشاهد إن وُجد.</li>
+                            <li class="list-group-item bg-transparent border-0 py-2">توقيع المتلقي باسمه مع التاريخ والساعة.</li>
+                            <li class="list-group-item bg-transparent border-0 py-2 fw-bold text-danger">تنبيه: يجب توثيق الأمر في الملف خلال 24 ساعة كحد أقصى.</li>
+                        </ol>
+                    </div>
+
+                    <div class="text-center mt-5 d-print-none">
+                        <button onclick="window.print();" class="btn btn-primary btn-lg rounded-pill px-5">
+                            <i class="bi bi-printer me-2"></i> طباعة السياسة
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,10 +71,11 @@
 </div>
 
 <style>
+    /* لمسة جمالية للطباعة */
     @media print {
-        .btn { display: none !important; }
-        body { background: white !important; }
-        .container { width: 100% !important; max-width: none !important; }
+        .card { box-shadow: none !important; border: 1px solid #ccc !important; }
+        .bg-light { background: #f8f9fa !important; }
+        .d-print-none { display: none !important; }
     }
 </style>
 {% endblock %}
