@@ -26,7 +26,8 @@ urlpatterns = [
     path('consent/' ,views.consent,name='consent OR'),
     path('cons/' ,views.con,name='places of consent'),
     path('info/' ,views.I,name='confidentiality'),
-   
+    path('bedsores/' ,views.bedsores,name='bed'),
+
 
 
 

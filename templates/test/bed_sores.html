@@ -1,0 +1,64 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block title %}سياسة الوقاية من قرح الفراش{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                <div class="card-header bg-success py-4 text-white text-center border-0">
+                    <h3 class="fw-bold mb-0"><i class="bi bi-shield-plus me-2"></i> سياسة الوقاية من قرح الضغط</h3>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    
+                    <div class="mb-5">
+                        <h5 class="text-success fw-bold mb-3"><i class="bi bi-clipboard-pulse me-2"></i> 1. تقييم المخاطر (Braden Scale)</h5>
+                        <div class="p-3 bg-light rounded-3 border-end border-4 border-success">
+                            <p class="mb-0">يجب إجراء تقييم لمخاطر الإصابة بقرح الفراش لجميع المرضى عند الدخول ومرة كل 24 ساعة باستخدام مقياس "برادين" (Braden Scale) وتوثيق النتيجة في ملف المريض.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h5 class="text-success fw-bold mb-3"><i class="bi bi-droplet-half me-2"></i> 2. العناية اليومية بالجلد</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent">• الحفاظ على نظافة وجفاف الجلد بصفة مستمرة.</li>
+                            <li class="list-group-item bg-transparent">• فحص أماكن الضغط (الكعبين، العصعص، المرفقين) يومياً للبحث عن أي احمرار.</li>
+                            <li class="list-group-item bg-transparent">• تجنب التدليك المباشر لمناطق بروز العظام.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-5">
+                        <h5 class="text-success fw-bold mb-3"><i class="bi bi-arrow-repeat me-2"></i> 3. تغيير الوضعية والحركة</h5>
+                        <div class="p-4 bg-success bg-opacity-10 rounded-4">
+                            <p class="mb-2">• تغيير وضعية المريض كل ساعتين على الأقل للمرضى غير القادرين على الحركة.</p>
+                            <p class="mb-2">• استخدام المراتب الطبية الهوائية (Anti-bedsore mattress) للمرضى ذوي المخاطر العالية.</p>
+                            <p class="mb-0">• الحفاظ على رفع رأس السرير بزاوية لا تتجاوز 30 درجة لتقليل قوى القص (Shearing).</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="text-success fw-bold mb-3"><i class="bi bi-egg-fried me-2"></i> 4. التغذية والترطيب</h5>
+                        <p class="text-muted">متابعة حالة المريض التغذوية والتأكد من تناول كميات كافية من البروتين والسوائل لدعم التئام الأنسجة، مع استشارة أخصائي التغذية للحالات الحرجة.</p>
+                    </div>
+
+                    <div class="text-center mt-5 d-print-none">
+                        <button onclick="window.print();" class="btn btn-success btn-lg rounded-pill px-5">
+                            <i class="bi bi-printer me-2"></i> طباعة السياسة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media print {
+        .d-print-none { display: none !important; }
+        .card { border: none !important; box-shadow: none !important; }
+    }
+</style>
+{% endblock %}

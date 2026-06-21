@@ -90,6 +90,9 @@ def con(request):
 def I(request):
     return render(request,'test/information.html',)
 
+def bedsores(request):
+    return render(request,'test/bed_sores.html',)
+
 
 
 
