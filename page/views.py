@@ -61,8 +61,39 @@ def out(request):
 def vap(request):
     return render(request,'bundles/vap.html',)
 
-def test(request):
-    return render(request,'test/t.html',)
+def dama(request):
+    return render(request,'test/DAMA.html',)
+
+
+def escape(request):
+    return render(request,'test/escape.html',)
+
+
+def g(request):
+    return render(request,'test/gahar_ar.html',)
+
+def gahar(request):
+    return render(request,'test/gahar.html',)
+
+def entry(request):
+    return render(request,'test/entrance.html',)
+
+def verbal_order(request):
+    return render(request,'test/verbal-order.html',)
+
+def consent(request):
+    return render(request,'test/consent.html',)
+
+def con(request):
+    return render(request,'test/place.html',)
+
+def I(request):
+    return render(request,'test/information.html',)
+
+
+
+
+
 
 
 
@@ -81,12 +112,6 @@ def gahar_checklist_view(request):
     
     return render(request, 'test/checklist.html', {'form': form})
 
-
-def g(request):
-    return render(request,'test/gahar_ar.html',)
-
-def gahar(request):
-    return render(request,'test/gahar.html',)
 
 
 

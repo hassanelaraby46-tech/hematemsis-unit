@@ -1,0 +1,42 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة أماكن تواجد الإقرارات الطبية</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .policy-container { max-width: 800px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-right: 10px solid #2c3e50; }
+        .policy-title { color: #2c3e50; font-weight: bold; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+        .list-item { padding: 12px; border-bottom: 1px solid #f8f9fa; transition: background 0.3s; }
+        .list-item:hover { background-color: #fdfdfd; }
+        .badge-num { background-color: #34495e; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.9em; margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="policy-container">
+        <h3 class="policy-title">سياسة أماكن تواجد الإقرارات الطبية</h3>
+        
+        <div class="list-group list-group-flush">
+            <div class="list-item"><span class="badge-num">7.1</span> وضع قائمة معتمدة بكل الإقرارات اللازمة والكميات المتوفرة.</div>
+            <div class="list-item"><span class="badge-num">7.2</span> طلب النماذج قبل نفاذ الكمية (يكفي لثلاثة أشهر من الاستهلاك).</div>
+            <div class="list-item"><span class="badge-num">7.3</span> حساب إحصائية شهرية بمعدلات الاستهلاك وعرضها على الإدارة.</div>
+            <div class="list-item"><span class="badge-num">7.4</span> متابعة الإقرارات (Audit) كل 3 أشهر مع تحليل الأسباب وخطة العمل التصحيحية.</div>
+            <div class="list-item"><span class="badge-num">7.5</span> نشر القائمة المعتمدة للإقرارات على الأقسام العلاجية.</div>
+            <div class="list-item"><span class="badge-num">7.6</span> طلب النماذج من مكتب التسجيل الطبي.</div>
+            <div class="list-item"><span class="badge-num">7.7</span> حفظ النماذج في مكتب التسجيل في مكان ثابت ومعروف للجميع.</div>
+            <div class="list-item"><span class="badge-num">7.8</span> توقيع المريض/ذويه على الإقرار العام للدخول وعدم مسؤولية المستشفى عن المتعلقات غير المسلمة للأمانات.</div>
+            <div class="list-item"><span class="badge-num">7.9</span> إرفاق نموذج إقرار الجراحة بالنموذج العام بعد الشرح الطبي.</div>
+            <div class="list-item"><span class="badge-num">7.10</span> إرفاق نموذج الإقرار الخاص بأي إجراء طبي آخر بملف المريض.</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

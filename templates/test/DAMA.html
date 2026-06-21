@@ -1,0 +1,76 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block title %}إقرار الخروج ضد النصيحة الطبية{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4 shadow-sm" style="border: 5px double #333;">
+                
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold text-decoration-underline">إقرار الخروج ضد النصيحة الطبية</h3>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <p class="text-dark">
+                            أقر أنا الموقع أدناه ( نفسي - ابني - بنتي - زوجي - زوجتي - والدي - اخي - اختي ) 
+                            الاسم الرباعي: <input type="text" class="form-control d-inline-block w-50" placeholder="اكتب الاسم هنا">
+                        </p>
+                        <p class="text-dark">
+                            بأنني أطلب الخروج من المستشفى رغم موافقة الطبيب المعالج ونصحه لي بضرورة البقاء، 
+                            ورغم المحاولات التي بذلتها إدارة المستشفى لإقناعي بالامتثال للنصح الطبي.
+                        </p>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">الأسم الرباعي:</label>
+                            <input type="text" class="form-control" name="full_name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">توقيع المقر:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">رقم البطاقة:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">تاريخ الخروج:</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">ساعة الخروج:</label>
+                            <input type="time" class="form-control">
+                        </div>
+                    </div>
+
+                    <hr>
+                    
+                    <h5 class="fw-bold mt-4">الشهود:</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-2">توقيع نائب القسم المباشر مع الختم: ________________</div>
+                        <div class="col-md-6 mb-2">توقيع التمريض المباشر: ________________</div>
+                        <div class="col-md-6 mb-2">توقيع الامن الداخلي: ________________</div>
+                        <div class="col-md-6 mb-2">توقيع مسئولة مرور المستشفى: ________________</div>
+                        <div class="col-md-6 mb-2">توقيع النائب الاداري مع الختم: ________________</div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">حفظ الإقرار</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

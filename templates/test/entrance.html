@@ -1,0 +1,95 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block title %}إقرار قواعد نظام الإقامة بالمستشفى{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="p-5 shadow bg-white" style="border: 4px double #000; border-radius: 5px; font-family: 'Cairo', sans-serif; line-height: 1.8;">
+                
+                <div class="row mb-4 border-bottom pb-3">
+                    <div class="col-6 mb-2">
+                        <label class="fw-bold">اسم المريض:</label> __________________________
+                    </div>
+                    <div class="col-6 mb-2 text-start">
+                        <label class="fw-bold">رقم الملف:</label> ____________
+                    </div>
+                    <div class="col-6 mb-2">
+                        <label class="fw-bold">الجنسية:</label> __________________________
+                    </div>
+                    <div class="col-6 mb-2 text-start">
+                        <label class="fw-bold">رقم البطاقة:</label> ____________
+                    </div>
+                    <div class="col-6">
+                        <label class="fw-bold">تاريخ الدخول:</label> ____ / ____ / 202
+                    </div>
+                    <div class="col-6 text-start">
+                        <label class="fw-bold">القسم:</label> ________________
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold text-decoration-underline">إقرار بقواعد نظام الإقامة بالمستشفى</h4>
+                </div>
+
+                <div class="text-dark" style="text-align: justify;">
+                    <p>في إطار قيام المستشفى بتقديم أفضل الخدمات الطبية للمرضى وللحفاظ على راحتهم وسلامتهم، فإنه يجب الالتزام بالقواعد الآتية:</p>
+                    
+                    <ol class="fw-normal">
+                        <li>الاطلاع على كافة أنظمة العمل بالمستشفى واتباعها بدقة، ومنها أوقات الزيارة وما تفرضه مصلحة العمل بما في ذلك مواعيد الإقامة والزيارة وما تقره إدارة المستشفى بخصوص منع التدخين وإحضار الأطعمة والمشروبات من خارج المستشفى، وعدم استخدام أي أجهزة كهربائية خاصة بالمرضى.</li>
+                        <li>المستشفى غير مسؤول عن فقدان أي ممتلكات شخصية أو مبالغ مالية أو ذهب أو موبايل مع المريض أو مرافقيه، إلا إذا تم إيداعها في خزينة المستشفى بإيصال رسمي، مع العلم بأن مسؤولية المستشفى تنتهي بمجرد خروج المريض أو تسليمه الأمانات قبل خروجه.</li>
+                        <li>تقرر إدارة المستشفى ضرورة وجود مرافق للحالات التي تستدعي حالتها الصحية ذلك، وبناءً على تقدير الطبيب المعالج، ويتم استخراج تصريح مرافق بمعرفة إدارة المستشفى مع الالتزام بكافة تعليمات المرافق المحددة.</li>
+                        <li>يلتزم المريض أو من يمثله بسداد تكاليف العلاج والإقامة والخدمات المقدمة له وفقاً للأسعار المقررة وبناءً على نوع الإقامة المختارة.</li>
+                        <li>يقر المريض أو ولي أمره بالالتزام بكافة الإرشادات الطبية والتمريضية وبكافة الفحوصات والعمليات التي تقررها المستشفى، مع الالتزام بسداد كامل المستحقات المالية قبل مغادرة المستشفى.</li>
+                    </ol>
+
+                    <div class="mt-4">
+                        <p class="fw-bold">بناءً عليه أقر أنا الموقّع أدناه بأنني قد اطلعت وفهمت كافة القواعد المذكورة وألتزم بها.</p>
+                    </div>
+                </div>
+
+                <div class="row mt-5 pt-4 border-top">
+                    <div class="col-6">
+                        <p class="fw-bold text-center">إقرار من المريض (أو ولي الأمر)</p>
+                        <div class="mt-3">
+                            الاسم: ____________________<br>
+                            التوقيع: ____________________<br>
+                            رقم البطاقة: _________________
+                        </div>
+                    </div>
+                    <div class="col-6 border-end">
+                        <p class="fw-bold text-center">الموظف المختص</p>
+                        <div class="mt-3">
+                            الاسم: ____________________<br>
+                            التوقيع: ____________________<br>
+                            التاريخ: ____ / ____ / 202
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5 d-print-none">
+                    <button onclick="window.print();" class="btn btn-primary px-5">
+                        <i class="bi bi-printer"></i> طباعة الوثيقة
+                    </button>
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">العودة للرئيسية</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* تحسينات لعملية الطباعة */
+    @media print {
+        body { background: white !important; }
+        .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+        .shadow { box-shadow: none !important; }
+        .p-5 { padding: 20px !important; }
+        .btn { display: none !important; }
+    }
+    ol li { margin-bottom: 15px; }
+</style>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'hassan/base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة سرية المعلومات - الإجراءات</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-green: #27ae60; --light-bg: #f4f7f6; }
+        body { background-color: var(--light-bg); font-family: 'Segoe UI', Tahoma, sans-serif; }
+        .policy-card { 
+            max-width: 800px; margin: 50px auto; background: white; 
+            border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+            padding: 40px; border-top: 8px solid var(--primary-green); 
+        }
+        .header-section { border-bottom: 2px solid #eee; margin-bottom: 30px; padding-bottom: 20px; }
+        .clause-item { display: flex; align-items: flex-start; margin-bottom: 20px; padding: 15px; border-radius: 10px; transition: 0.3s; }
+        .clause-item:hover { background-color: #f9fdfb; }
+        .number-badge { 
+            background: var(--primary-green); color: white; min-width: 45px; 
+            height: 45px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; margin-left: 20px; font-weight: bold; flex-shrink: 0;
+        }
+        .text-content { color: #555; line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="policy-card">
+        <div class="header-section">
+            <h2 class="text-success fw-bold">سياسة سرية المعلومات الخاصة بالمرضى</h2>
+        
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.1</div>
+            <p class="text-content">توفير أماكن آمنة (دواليب) في كل الأقسام العلاجية تضمن حفظ الملفات بطريقة سليمة أثناء وجود المريض بالقسم.</p>
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.2</div>
+            <p class="text-content">حماية ملفات المرضى أثناء تواجدهم بالأقسام العلاجية وحفظها بطريقة آمنة تمنع نزع أو ضياع أي ورقة من الملف.</p>
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.3</div>
+            <p class="text-content">يتم استكمال بيانات المريض ووضع كل المستندات الخاصة به بالملف الطبي تلقائياً بعد تلقي الخدمة.</p>
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.4</div>
+            <p class="text-content">يتم تسليم الملف كامل البيانات لمكتب التسجيل الطبي لحفظه فور خروج المريض من المستشفى وحتى 3 أيام فقط من الخروج.</p>
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.5</div>
+            <p class="text-content">يقوم قسم الملفات الطبية بحفظ ملف المريض بعد التأكد من استيفائه كل المستندات الخاصة بالمريض وفق سياسات وإجراءات التسجيل الطبي.</p>
+        </div>
+
+        <div class="clause-item">
+            <div class="number-badge">7.6</div>
+            <p class="text-content">يتم تأمين أماكن حفظ الملفات الطبية بطريقة آمنة وسرية، ولا يسمح بالدخول لغير العاملين وفق سياسات وإجراءات التسجيل الطبي.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block title %}سياسة الأوامر الطبية الشفهية والتليفونية{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="p-5 shadow bg-white border border-secondary rounded">
+                
+                <div class="text-center mb-5 border-bottom pb-3">
+                    <h3 class="fw-bold text-primary">سياسة الأوامر الطبية الشفهية والتليفونية</h3>
+                </div>
+
+                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-shield-lock me-2"></i> 1. حالات الأوامر الشفهية:</h5>
+                <p>يتم الاقتصار على الأوامر الشفهية فقط في الحالات الطارئة التالية:</p>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item">• حالات الطوارئ.</li>
+                    <li class="list-group-item">• أثناء العمليات والإفاقة.</li>
+                    <li class="list-group-item">• أثناء التعامل مع حالة حرجة يصعب معها الكتابة.</li>
+                    <li class="list-group-item">• إعطاء أدوية لإنقاذ حياة المريض.</li>
+                    <li class="list-group-item">• عند إبلاغ النتائج الحرجة.</li>
+                    <li class="list-group-item">• استكمال المستندات الورقية التي قد يؤدي تأخيرها لضرر مباشر.</li>
+                </ul>
+
+                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-person-badge me-2"></i> 2. الصلاحيات:</h5>
+                <p><strong>مُصدر الأمر:</strong> رئيس القسم، الأخصائي، والطبيب المقيم.</p>
+                <p><strong>متلقي الأمر:</strong> الأطباء المقيمون، الصيادلة، والتمريض.</p>
+
+                <h5 class="fw-bold text-dark mt-4"><i class="bi bi-clipboard-check me-2"></i> 3. إجراءات تنفيذ الأمر:</h5>
+                <div class="bg-light p-3 rounded">
+                    <ol class="mb-0">
+                        <li>تسجيل الأمر في تذكرة المريض فوراً.</li>
+                        <li>إعادة قراءة الأمر لفظياً على المتلقي للتأكد من صحته.</li>
+                        <li>كتابة اسم الطبيب مُصدر الأمر والاستعانة بشاهد إن وُجد.</li>
+                        <li>توقيع المتلقي باسمه مع كتابة التاريخ والساعة.</li>
+                        <li><strong>تنبيه:</strong> يجب على الطبيب توثيق الأمر شفهياً أو تليفونياً في الملف الطبي بالتوقيع خلال 24 ساعة كحد أقصى.</li>
+                    </ol>
+                </div>
+
+                <div class="text-center mt-5 d-print-none">
+                    <button onclick="window.print();" class="btn btn-primary px-5">
+                        <i class="bi bi-printer"></i> طباعة السياسة
+                    </button>
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">العودة للرئيسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media print {
+        .btn { display: none !important; }
+        body { background: white !important; }
+        .container { width: 100% !important; max-width: none !important; }
+    }
+</style>
+{% endblock %}

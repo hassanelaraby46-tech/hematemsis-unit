@@ -1,0 +1,51 @@
+{% extends 'hassan/base.html' %}
+{% load static %}
+
+{% block title %}مغادرة المستشفى ضد النصيحة الطبية{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="p-5 shadow-sm bg-white" style="border: 10px double #6c757d; border-radius: 10px;">
+                
+                <div class="text-center mb-5">
+                    <h3 class="fw-bold text-decoration-underline" style="color: #333;">مغادرة المستشفى ضد النصيحة الطبية</h3>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <p class="fs-5 text-dark">
+                            تم مغادرة المريض / الاسم رباعي: 
+                            <input type="text" class="form-control d-inline-block w-50" placeholder="........." required> 
+                            (........) ضد النصيحة الطبية.
+                        </p>
+                        <p class="fs-5 text-dark">
+                            الساعة: <input type="time" class="form-control d-inline-block w-25">
+                        </p>
+                        <p class="fs-5 text-dark">
+                            اليوم: <input type="date" class="form-control d-inline-block w-25">
+                        </p>
+                    </div>
+
+                    <div class="mt-5">
+                        <h5 class="fw-bold mb-4">الشهود:</h5>
+                        <div class="mb-3">توقيع نائب القسم المباشر مع الختم: __________________________</div>
+                        <div class="mb-3">توقيع التمريض المباشر: __________________________</div>
+                        <div class="mb-3">توقيع الأمن الداخلي: __________________________</div>
+                        <div class="mb-3">توقيع مسئولة مرور المستشفى: __________________________</div>
+                        <div class="mb-3">توقيع النائب الإداري مع الختم: __________________________</div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-secondary btn-lg px-5">حفظ الإقرار</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

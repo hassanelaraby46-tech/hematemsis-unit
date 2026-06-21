@@ -18,8 +18,6 @@ class GaharChecklistAdmin(admin.ModelAdmin):
 
 
 
-
-
 @admin.register(VisitorLog)
 class VisitorLogAdmin(admin.ModelAdmin):
     list_display = ('ip_address', 'page_visited', 'timestamp')
