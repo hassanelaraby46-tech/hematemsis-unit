@@ -1,0 +1,66 @@
+hyper text markup language (HTML)
+لغه مصممه لناء هيكل الموقع وليست لغه برمجه
+syntax [
+    tags(title,parag,audio,video,img,btn)
+]
+h tag >>>head تشير الى  ولها مقاسات من 1 الى 6 حجم الخط 
+     دا تاج ليه بدايه ونهايه
+     <h2>hello</h2> hello > هذا هو المحتوى
+
+hr appreviation for horizontal row   (خط فاصل او سطر) --------------
+hr>>> single tag ليس له بدايه ولا نهايه لانه لا يوجد محتوى تضيفه
+br>>> single tag لعمل سطر جديد او مسافه بين السطور
+<meta> single tag
+-------------------------------
+مكونات الصفحه 
+ 1: <!DOCTYPE html>  اصدار html  >> دا اصدار html 5
+ 2: <html></html> كل الصفخه بكل الاكواد بتتكتب داخل وسم html
+    : <html lang=''>  بتختار لغه الموقع لمحركات البحثlang attribute appreviation for language
+3:head  
+عقل الموقع بكتب معلومات عن الموقع زى اسم الموقع ووصف الموقع اللى بتديها لمحركات البحث عشان يصنف الموقع     
+ in head :
+    وسم <meta charset="" >  دا خاصيه attribute 
+    charset appreviation for character set   يعنى الحرف وبتتحكم ف الشفير والترميز
+    charset="utf-8"    الترميز العالمى اللى يدعم العربيه والانجليزيه ولغات اخرى
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> لجعله يظهر بمرونه ع الاجهزه المختلفه
+    <meta http-equiv="refresh" content="3">  لجعل المتصفح يعمل  refresh كل 3 ثوانى من نفسه
+    <meta http-equiv="refresh" content="3 url=https://wwww.facebook.com/"> لما يعمل refresh يحوله مثلا ع فيسبوك
+    <link rel="stylesheet" href="">  نستخدمه عشان نربط ملف css
+      فيه 2attribute : rel appreviation of relationship > علاقه الملف اللى عايزه تربطه ب html بتاعى ,,stylesheet نوع ملف css
+      href بيدد مكان ملف css
+    <style></style> tag >> بنستخدمه عشان نكتب css بشكل مباشر فى ملف html
+      ما بين style بكتب اكواد css 
+    script tag   > لكتابه كود javascript 
+
+
+4: body كل حاجه بتظهر للمستخدم :
+    <p></p> appreviation of paragraph >
+     يجعل ما بينه فى سطر كامل لوحده  لان الباراجراف هو عنصر بلوك
+     <br> single tag > line break > بيعمل سطر جديد
+     <p align='right'>  >> align right لجعل الكتابه من الناحيه اليمنى مثلا 
+    <pre></pre>   لو عايز المسافات تظهر 
+        لو نزلت سطر ينزل معاكةسطر جديد
+    <span></span>  tag in line  
+    لو فيه اكتر من span  سيتم كتابتهم بجانب بعض ع نفس السطر <<تحت بعض
+    بينما <p> السطر انتهى وتنزل سطر جديد 
+    --------------------------
+    formating text : (كلها in line)
+        <small>hello</small> لتصغير ما بينها وهى in line
+        <b> : bold  , 
+        <strong></strong> >>> bold for important text
+        <i></i>   >>> appreviation of italic (مائل)
+        <em></em>  >>>appreviation of emphasize text 
+        mark>ggggggggg</mark>   >>>وضع ما بينها فى لون اصفر 
+        <u>payment</u> >>> (payment) وضع خط تحت الكلمه اللى بينها
+        <ins></ins> >>>inserted text  العباره تم اضافتها جديد  وضع شرطه 
+        <s></s>  >>>  لوضع خط فى نص الكلمه زى شطب كدا
+        <del></del> >>>>  appreviation of delete   تخبر ان الكلمه دى محذوفه
+        <sub></sub> >>>>> لنزول كلمه عن السطر 
+           مثلا H2o
+        <sup></sup>  >>>>  لرفع كلمه فوق 
+            n2  تستخدم ايضا فى اوس 2 مثلا 
+        <img src="" alt=""> : single tag
+             src :image  url   مسار الصوره
+             alt : alternative : وصف الصوره
+             <img src="{% static 'image/h.jpg' %}">
+            <img title='hassan'  : لما تقف ع الصوره بالماوس هيظهر الاسم اللى فى ال title

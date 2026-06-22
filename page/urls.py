@@ -27,7 +27,7 @@ urlpatterns = [
     path('cons/' ,views.con,name='places of consent'),
     path('info/' ,views.I,name='confidentiality'),
     path('bedsores/' ,views.bedsores,name='bed'),
-
+    path('tt/' ,views.test,name='test'),
 
 
 

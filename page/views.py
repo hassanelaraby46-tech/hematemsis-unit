@@ -93,6 +93,9 @@ def I(request):
 def bedsores(request):
     return render(request,'test/bed_sores.html',)
 
+def test(request):
+    return render(request,'test/test.html',)
+
 
 
 
